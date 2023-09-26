@@ -1,0 +1,27 @@
+@media (max-width: 767px) {
+    .main-card-class {
+        width: 70%;
+    }
+ }
+
+/* Small devices (landscape phones, less than 768px)*/
+@media (min-width: 767.98px) and (max-width: 990px)  {
+    .main-card-class {
+        width: 60%;
+    }
+ }
+
+/* Medium devices (tablets, less than 992px)*/
+@media (min-width: 991.98px) and (max-width: 1198px){
+    .main-card-class {
+        width: 50%;
+    }
+ }
+
+
+/* Large devices (desktops, less than 1200px)*/
+@media (min-width: 1199.98px) {
+    .main-card-class {
+        width: 40%;
+    }
+}
