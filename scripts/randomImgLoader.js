@@ -1,9 +1,10 @@
 // Update img element with id "hero-img" with the random image on page load
-const images = ["fall10x8.jpg", "beetle10x8.jpg", "lightHouse10x8.jpg"]
+const imageArray = ["res/imgs/fall10x8.jpg", "res/imgs/beetle10x8.jpg", "res/imgs/lightHouse10x8.jpg"]
 
-function displayRandomHeroImage() {
-    const randomNum = Math.floor(Math.random() * images.length);
-    const img = document.getElementById("hero-img");
-    img.src = "res/imgs/" + images[randomNum];
+window.onload = () => displayRandomHeroImage(imageArray);
+
+function displayRandomHeroImage(imageArray) {
+    const randomNum = Math.floor(Math.random() * imageArray.length);
+    document.getElementById("hero-img").src = imageArray[randomNum];
 }
 
