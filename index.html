@@ -1,48 +1,370 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles/style.css">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arjun Bhadra, applied AI engineer</title>
+<meta name="description" content="Arjun Bhadra builds applied AI systems: LLM pipelines, agentic apps and the developer tools around them. Previously eight years on Adobe's mobile and TV SDKs.">
+<meta property="og:title" content="Arjun Bhadra">
+<meta property="og:description" content="Applied AI, LLM systems, agentic workflows and cross-platform SDKs.">
+<meta property="og:url" content="https://arjunbhadra.com/">
+<meta property="og:image" content="https://arjunbhadra.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#060a0f">
+<link rel="canonical" href="https://arjunbhadra.com/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/markdown" title="Plain-text summary for AI agents" href="/llms.txt">
+<!-- GOOGLE SEARCH CONSOLE: paste the verification meta tag here (or verify the domain by DNS and skip this) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Arjun Bhadra","url":"https://arjunbhadra.com/","jobTitle":"Senior Software Engineer, AI/ML Applications","worksFor":{"@type":"Organization","name":"Adobe"},"address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US","addressLocality":"San Francisco Bay Area"},"knowsAbout":["Applied AI","Large language models","Agentic workflows","Generative AI","Mobile SDKs","Android","iOS"],"alumniOf":{"@type":"CollegeOrUniversity","name":"University of California, Irvine"},"sameAs":["https://www.linkedin.com/in/arjunbhadra/","https://github.com/addb"]}
+</script>
+<!-- LOGO: option 2 (ADDB in a terminal window). The favicon uses the simplified small-size version of the mark. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a0f'/%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='7' y='10' width='50' height='44' rx='9' stroke='%23e4f1f6' stroke-width='4.5'/%3E%3Cpath d='M17 26 L26 33 L17 40' stroke='%239be8ff' stroke-width='5'/%3E%3Cpath d='M31 42 H45' stroke='%23ffb27a' stroke-width='5'/%3E%3C/g%3E%3C/svg%3E">
+<!--fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@50..125,100..900&family=IBM+Plex+Sans:wdth,wght@85..100,100..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+<!--/fonts-->
+<link rel="stylesheet" href="assets/site.css">
+<script>
+  (function () {
+    var d = document.documentElement, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, seen = false;
+    d.classList.add('js');
+    if (reduce) d.classList.add('rm');
+    try { seen = sessionStorage.getItem('ab-boot') === '1'; } catch (e) {}
+    if (!reduce && !seen && !location.hash) d.classList.add('boot');
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-    <title>arjunbhadra.com</title>
+<!-- Boot sequence: runs once per session, skippable, off with reduced motion -->
+<div id="boot">
+  <div class="boot-inner" aria-hidden="true">
+    <svg class="boot-mark" viewBox="0 0 64 64"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="4" y="10" width="56" height="44" rx="7" stroke="#e4f1f6" stroke-width="2.4"/><path pathLength="1" d="M4 20 H60" stroke="#e4f1f6" stroke-width="2"/><g class="bm-l" stroke="#9be8ff" stroke-width="2.6"><circle pathLength="1" cx="13.5" cy="40" r="4.2"/><path pathLength="1" d="M17.7 35.8 V44.2"/><circle pathLength="1" cx="25.5" cy="40" r="4.2"/><path pathLength="1" d="M29.7 30 V44.2"/><circle pathLength="1" cx="37.5" cy="40" r="4.2"/><path pathLength="1" d="M41.7 30 V44.2"/><path pathLength="1" d="M46 30 V44.2"/><circle pathLength="1" cx="50.2" cy="40" r="4.2"/></g></g></svg>
+    <ul class="boot-lines">
+      <li>Initializing display <span>ok</span></li>
+      <li>Calibrating instruments <span>ok</span></li>
+      <li>Loading profile: Arjun Bhadra <span>ok</span></li>
+      <li>Systems online <span>ready</span></li>
+    </ul>
+    <div class="boot-bar"><i></i></div>
+  </div>
+</div>
+<button class="boot-skip" type="button" id="bootSkip">Skip intro</button>
 
-    <!--bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--fonts and icons-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <script src="scripts/randomImgLoader.js"></script>
+<div class="bg" aria-hidden="true">
+  <div class="bg-glow"></div>
+  <div class="bg-grid" data-depth="8"></div>
+  <svg class="bg-arcs" viewBox="0 0 780 780" data-depth="18">
+    <g class="spin"><circle cx="390" cy="390" r="370" fill="none" stroke="rgba(155,232,255,.08)" stroke-dasharray="2 10"/></g>
+    <circle cx="390" cy="390" r="320" fill="none" stroke="rgba(155,232,255,.07)"/>
+    <g class="spin-r"><circle cx="390" cy="390" r="270" fill="none" stroke="rgba(155,232,255,.12)" stroke-dasharray="160 1540"/></g>
+    <circle cx="390" cy="390" r="220" fill="none" stroke="rgba(155,232,255,.05)"/>
+  </svg>
+</div>
 
-  </head>
-  <body class="bg-light">
-    <div class=" card  bg-dark text-white border-secondary text-center mx-auto d-block mt-4 p-2 main-card-class">
-      <h5 class="font-weight-light">
-        <i class="bi bi-globe p-1"></i> arjunbhadra.com
-      </h5>
-    </div>
-    <div class="card border-secondary text-center mx-auto d-block mt-3 main-card-class">
-      <!-- Random photo will added by the script-->
-      <img id="hero-img" class="card-img-top" src="" alt="Photo by Arjun Bhadra">
-      <div class="card-body">
-        <h5 class="font-weight-light">Hello World!</h5>
-        <br>
-        <!--Social icons-->
-        <span class="font-weight-light">
-          <h2>
-            <a href="https://www.linkedin.com/in/arjunbhadra/" style="color: #0072b1;">
-              <i class="bi bi-linkedin p-2"></i>
-            </a>
-            <a href="https://github.com/addb" style="color: #000000">
-              <i class="bi bi-github p-2"></i>
-            </a>
-          </h2>
-        </span>
+<header class="hud">
+  <div class="hud-in">
+    <a class="brand" href="#profile" aria-label="Arjun Bhadra, back to top">
+      <!-- LOGO SLOT: option 2, ADDB in a terminal window (from logo-options.html). Swap the SVG inside .logo to change it. -->
+      <span class="logo" aria-hidden="true"><svg viewBox="0 0 64 64"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="56" height="44" rx="7" stroke="currentColor" stroke-width="2.8"/><path d="M4 20 H60" stroke="currentColor" stroke-width="2.2"/><circle cx="10" cy="15" r="1.5" fill="#ffb27a" stroke="none"/><circle cx="15" cy="15" r="1.5" fill="#9be8ff" stroke="none"/><g stroke="#9be8ff" stroke-width="3"><circle cx="13.5" cy="40" r="4.2"/><path d="M17.7 35.8 V44.2"/><circle cx="25.5" cy="40" r="4.2"/><path d="M29.7 30 V44.2"/><circle cx="37.5" cy="40" r="4.2"/><path d="M41.7 30 V44.2"/><path d="M46 30 V44.2"/><circle cx="50.2" cy="40" r="4.2"/></g></g></svg></span>
+      <span>Arjun Bhadra</span>
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#systems">Systems</a></li>
+        <li><a href="#graph">Graph</a></li>
+        <li><a href="#archive">Archive</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="clock" id="visitToggle" aria-controls="visit" aria-expanded="false" aria-label="Local time. Psst: open the visitor console" title="Psst. Curious what this page can see?"><i></i><span id="clock" aria-hidden="true">00:00:00</span><span class="lbl" aria-hidden="true">local</span></button>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <!-- PROFILE -->
+    <section class="hero" id="profile" aria-labelledby="name">
+      <div class="hero-copy">
+        <p class="eyebrow" data-hero><span class="dot"></span>Software Builder</p>
+        <h1 id="name" data-hero><span>Arjun</span><span>Bhadra</span></h1>
+        <p class="focus" data-hero>Applied AI, LLM systems, agentic workflows and cross&#8209;platform SDKs.</p>
+        <p class="intro" data-hero>Building AI systems that hold up in production, and the tools that help other engineers ship them.</p>
+        <div class="ctas" data-hero>
+          <a class="btn" href="#systems">Explore the work</a>
+          <a class="btn-ghost" href="https://www.linkedin.com/in/arjunbhadra/" rel="me">Connect on LinkedIn</a>
+        </div>
       </div>
-    </div>
+      <div class="hero-instr" data-hero>
+        <div class="instr-wrap" data-depth="10">
+          <div class="instr-glass" aria-hidden="true"></div>
+          <svg class="instr" viewBox="0 0 440 440" role="img" aria-label="An instrument dial that cycles through four focus areas: applied AI, LLM systems, agentic workflows and cross-platform SDKs." id="instr">
+            <circle class="ring" cx="220" cy="220" r="205"/>
+            <g id="ticks"></g>
+            <circle class="dash" cx="220" cy="220" r="176"/>
+            <circle class="arc" cx="220" cy="220" r="150"/>
+            <circle class="ring" cx="220" cy="220" r="118"/>
+            <g class="marker" id="marker"><path d="M220 33 L228 47 L212 47 Z"/></g>
+            <text class="ctr-small" x="220" y="196" text-anchor="middle" id="ctrIdx">Focus 1 of 4</text>
+            <text class="ctr-big" x="220" y="230" text-anchor="middle" id="ctrBig">Applied AI</text>
+            <text class="ctr-small" x="220" y="262" text-anchor="middle">San Francisco Bay Area</text>
+          </svg>
+        </div>
+      </div>
+    </section>
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    <!-- ABOUT -->
+    <section class="module" id="about" aria-labelledby="about-h" data-reveal>
+      <div class="mhead"><span class="glass glass-pill">About</span></div>
+      <h2 id="about-h" class="visually-hidden">About</h2>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>A builder at heart who loves to experiment. Give me a rough idea and there will be a prototype soon after, and with AI in the toolbox, building things has never been easier (or more fun). The part that still keeps me hooked is turning those experiments into something people can rely on. Away from the keyboard: collecting model cars, photography, and the occasional game of chess.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <!-- ACTIVE SYSTEMS -->
+    <section class="sec" id="systems" aria-labelledby="systems-h">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow glass glass-pill"><span class="dot"></span>Active systems</p>
+        <h2 class="title" id="systems-h">Live system consoles.</h2>
+        <p class="deck">Six systems, each running as a small illustrative console. Open one to play with it, see how it was built, or flip to the blueprint it started from.</p>
+      </header>
+      <div class="pcards" id="sysCards" data-reveal></div>
+      <noscript><ul class="ns-list"><li><b>GenStudio service</b> (2025)</li><li><b>Layers</b></li><li><b>OmniGen</b> (2025)</li><li><b>Coding-agent skills</b></li><li><b>Mobile and TV SDKs</b> (2017–2025)</li><li><b>Voyager</b></li></ul><p>The interactive cards need JavaScript.</p></noscript>
+    </section>
+
+    <!-- KNOWLEDGE GRAPH -->
+    <section class="sec" id="graph" aria-labelledby="graph-h">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow glass glass-pill"><span class="dot"></span>Knowledge graph</p>
+        <h2 class="title" id="graph-h">How it all connects.</h2>
+        <p class="deck">Projects, the technology underneath them and the domains they serve. Select a node to trace its links.</p>
+      </header>
+      <div class="module kg2" data-reveal data-kg2>
+        <div class="kg-toolbar">
+          <div class="kg-filters" role="group" aria-label="Show node types">
+            <button type="button" class="kg-filter f-work" aria-pressed="true" data-kind="work"><i></i>Work</button>
+            <button type="button" class="kg-filter f-tech" aria-pressed="true" data-kind="tech"><i></i>Tech</button>
+            <button type="button" class="kg-filter f-domain" aria-pressed="true" data-kind="domain"><i></i>Domains</button>
+          </div>
+          <div class="kg-tools">
+            <label class="kg-spacing">Spacing <input type="range" min="75" max="145" value="100" data-spacing></label>
+            <div class="kg-zoom" role="group" aria-label="Zoom">
+              <button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button>
+              <button type="button" data-zoom="fit">Fit</button>
+              <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+        </div>
+        <p class="kg-note" hidden>Technologies are hidden at this width so every label stays readable. Turn on <b>Tech</b> to add them.</p>
+        <div class="kg-stage">
+          <svg class="kg-svg" aria-label="Knowledge graph of projects, technologies and domains. Use the arrow keys to move between nodes, Enter to open details, plus and minus to zoom, zero to fit."></svg>
+          <aside class="kg-drawer" aria-live="polite" hidden></aside>
+        </div>
+        <p class="kg-hint">Drag to pan. Pinch, or use the buttons, to zoom. Drag a node to move it.</p>
+        <div class="kg-chips"></div>
+        <aside class="kg-mpanel" aria-live="polite"><p class="kg-intro">Select a project, technology or domain to see how it connects.</p></aside>
+        <noscript><p>The interactive graph needs JavaScript; every project is also listed on this page.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ARCHIVE -->
+    <section class="sec" id="archive" aria-labelledby="archive-h">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow glass glass-pill"><span class="dot"></span>Archive</p>
+        <h2 class="title" id="archive-h">Where it started.</h2>
+        <p class="deck">Every earlier project, each with a small looping demo. Filter by kind, then open any card.</p>
+      </header>
+      <div class="archive-view" id="archiveView" data-reveal>
+        <div class="arch-filters" id="archFilters" role="group" aria-label="Filter projects"></div>
+        <p class="visually-hidden" id="archCount" aria-live="polite"></p>
+        <div class="pcards" id="agrid"></div>
+        <noscript><ul class="ns-list"><li><b>San José MOTI website</b> (2018)</li><li><b>SnappLock</b> (2014)</li><li><b>ABC3D</b> (2015)</li><li><b>Pipeline monitoring dashboard</b> (2016)</li><li><b>Places</b> (2016)</li><li><b>Search Engine</b> (2016)</li><li><b>Intelligent Business Analytics</b> (2015)</li><li><b>The D-Deal</b> (2015)</li><li><b>Health Care Portal</b> (2015)</li><li><b>GameMaker game</b> (2015)</li><li><b>Run &amp; Urn</b> (2014)</li><li><b>Online Inventory Management</b> (2014)</li><li><b>Online Project Management</b> (2014)</li><li><b>ISTE VESIT website and app</b> (2013–14)</li><li><b>Cricket league database</b> (2013)</li><li><b>NodeJS ChatApp</b></li></ul><p>The interactive cards need JavaScript.</p></noscript>
+      </div>
+    </section>
+
+    <!-- COMMS -->
+    <section class="sec" id="contact" aria-labelledby="contact-h">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow glass glass-pill"><span class="dot"></span>Comms</p>
+        <h2 class="title" id="contact-h">Let's build something.</h2>
+        <p class="deck">LinkedIn is the best way to reach me. The code lives on GitHub.</p>
+      </header>
+      <div class="channels" data-reveal>
+        <a class="channel" href="https://www.linkedin.com/in/arjunbhadra/" rel="me">
+          <span class="ci"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="20" height="16" rx="3"/><circle cx="9.5" cy="11.5" r="2.5"/><path d="M5.8 18c.8-2 2.1-3 3.7-3s2.9 1 3.7 3M15.5 10.5h4.5M15.5 14h4.5"/></svg></span>
+          <span><b>LinkedIn</b><small>linkedin.com/in/arjunbhadra</small></span>
+          <svg class="go" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 15 15 7M8 7h7v7"/></svg>
+        </a>
+        <a class="channel" href="https://github.com/addb" rel="me">
+          <span class="ci"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="6.5" r="2.5"/><circle cx="7" cy="19.5" r="2.5"/><circle cx="19" cy="9.5" r="2.5"/><path d="M7 9v8M19 12c0 4-5 4-10.5 6"/></svg></span>
+          <span><b>GitHub</b><small>github.com/addb</small></span>
+          <svg class="go" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 15 15 7M8 7h7v7"/></svg>
+        </a>
+      </div>
+      <!-- PLACEHOLDER: add a resume link once a public (no phone number) PDF is in /files -->
+    </section>
+
+    <!-- YOUR VISIT: computed only in the visitor's browser -->
+    <aside class="visit-drawer" id="visit" aria-labelledby="visit-h" role="dialog" aria-modal="false" hidden>
+      <div class="vd-head">
+        <div><p class="vd-k">You found the visitor console<span class="vd-count" hidden></span></p><h2 class="vd-title" id="visit-h">What this page can see.</h2></div>
+        <button type="button" class="modal-close vd-close" data-vclose aria-label="Close the visitor console"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="module visit" data-visit>
+        <div class="mhead"><span class="glass glass-pill">Your visit</span><span class="vt-head-r">Local only<svg class="gears-head" viewBox="0 0 120 44" aria-hidden="true"><g data-gear="14" data-cx="22" data-cy="22" data-r="15"></g><g data-gear="9" data-cx="22" data-cy="22" data-r="15" data-mesh="0" data-angle="-18"></g><g data-gear="20" data-mesh="1" data-angle="12"></g></svg></span></div>
+        <p class="vt-promise"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Everything below is computed in your browser and never sent. The only thing kept is an anonymous page-view tally (GoatCounter): no cookies, no personal data.</p>
+        <p class="visually-hidden vt-live" aria-live="polite"></p>
+
+        <div class="vgrid">
+          <section class="w s1 w-time" aria-label="Time on page">
+            <p class="w-k">Time on page</p>
+            <svg class="w-viz" viewBox="0 0 100 100" aria-hidden="true"><g class="dial-ticks" data-ticks="12" data-r="44"></g><circle class="ring-bg" cx="50" cy="50" r="36"/><circle class="ring-fg rf-time" cx="50" cy="50" r="36" pathLength="1"/><line class="hand" x1="50" y1="50" x2="50" y2="22"/><circle cx="50" cy="50" r="2.6" class="hub"/></svg>
+            <p class="w-v" data-k="time">0:00</p>
+            <p class="w-s">Ring fills once a minute</p>
+            <svg class="w-gear" viewBox="0 0 60 60" aria-hidden="true"><g data-gear="12" data-cx="30" data-cy="30" data-r="22"></g></svg>
+          </section>
+
+          <section class="w s2 w-speed" aria-label="Scroll speed">
+            <p class="w-k">Scroll speed</p>
+            <svg class="w-viz gauge" viewBox="0 0 200 116" aria-hidden="true"><path class="g-track" d="M20 100 A80 80 0 0 1 180 100"/><path class="g-fill" d="M20 100 A80 80 0 0 1 180 100" pathLength="1"/><g class="g-ticks"></g><g class="g-trail"></g><line class="g-peak" x1="100" y1="26" x2="100" y2="14"/><line class="g-needle" x1="100" y1="100" x2="100" y2="30"/><circle cx="100" cy="100" r="5" class="hub"/><text x="18" y="114" class="g-lbl">0</text><text x="182" y="114" class="g-lbl" text-anchor="end">5k px/s</text></svg>
+            <div class="w-row"><p class="w-v" data-k="speed">0 px/s</p><p class="w-s">Peak <b data-k="peak">0 px/s</b></p></div>
+            <svg class="w-gear" viewBox="0 0 60 60" aria-hidden="true"><g data-gear="16" data-cx="30" data-cy="30" data-r="22"></g></svg>
+          </section>
+
+          <section class="w s1 w-depth" aria-label="Scroll depth">
+            <p class="w-k">Scroll depth</p>
+            <svg class="w-viz" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring-bg" cx="50" cy="50" r="38"/><circle class="ring-fg rf-depth" cx="50" cy="50" r="38" pathLength="1"/><line class="peak-mark" x1="50" y1="6" x2="50" y2="16"/></svg>
+            <p class="w-v" data-k="depth">0%</p>
+            <p class="w-s">Peak <b data-k="maxdepth">0%</b></p>
+          </section>
+
+          <section class="w s1 w-sections" aria-label="Sections explored">
+            <p class="w-k">Sections explored</p>
+            <svg class="w-viz" viewBox="0 0 100 100" aria-hidden="true"><g class="segs"></g></svg>
+            <p class="w-v" data-k="sections">0 of 0</p>
+            <p class="w-s">One segment per section</p>
+          </section>
+
+          <section class="w s1 w-cpu" aria-label="Processor and memory">
+            <p class="w-k">CPU cores</p>
+            <svg class="w-viz" viewBox="0 0 100 100" aria-hidden="true"><g class="cog"></g></svg>
+            <p class="w-v" data-k="cores">&ndash;</p>
+            <div class="mem"><span>Memory</span><i><b></b></i><em data-k="mem">&ndash;</em></div>
+          </section>
+
+          <section class="w s2 w-inter" aria-label="Interactions">
+            <p class="w-k">Interactions</p>
+            <div class="minis">
+              <div class="mini"><svg viewBox="0 0 60 60" aria-hidden="true"><circle class="ring-bg" cx="30" cy="30" r="24"/><circle class="ring-fg m-viz" cx="30" cy="30" r="24" pathLength="1"/></svg><b data-k="viz">0/6</b><span>Consoles run</span></div>
+              <div class="mini"><svg viewBox="0 0 60 60" aria-hidden="true"><circle class="ring-bg" cx="30" cy="30" r="24"/><circle class="ring-fg m-nodes" cx="30" cy="30" r="24" pathLength="1"/></svg><b data-k="nodes">0</b><span>Graph nodes</span></div>
+              <div class="mini"><svg viewBox="0 0 60 60" aria-hidden="true"><circle class="ring-bg" cx="30" cy="30" r="24"/><circle class="ring-fg m-demos" cx="30" cy="30" r="24" pathLength="1"/></svg><b data-k="demos">0/22</b><span>Projects opened</span></div>
+            </div>
+          </section>
+
+          <section class="w s1 w-activity" aria-label="Activity">
+            <p class="w-k">Activity</p>
+            <dl class="kv">
+              <div><dt>Clicks</dt><dd data-k="clicks">0</dd></div>
+              <div><dt>Idle</dt><dd data-k="idle">0 s</dd></div>
+              <div><dt>Focus / blur</dt><dd data-k="focus">0 / 0</dd></div>
+            </dl>
+            <div class="idlebar" aria-hidden="true"><i></i></div>
+          </section>
+
+          <section class="w s1 w-net" aria-label="Network">
+            <p class="w-k">Network</p>
+            <svg class="w-viz bars" viewBox="0 0 80 50" aria-hidden="true"><rect x="6" y="36" width="12" height="12" rx="2"/><rect x="24" y="26" width="12" height="22" rx="2"/><rect x="42" y="16" width="12" height="32" rx="2"/><rect x="60" y="4" width="12" height="44" rx="2"/></svg>
+            <p class="w-v" data-k="net">&ndash;</p>
+            <p class="w-s" data-k="online">Online</p>
+          </section>
+
+          <section class="w s2 w-device" aria-label="Device">
+            <p class="w-k">Device</p>
+            <div class="dev"><svg class="dev-glyph" viewBox="0 0 96 64" aria-hidden="true"></svg><div><p class="w-v" data-k="browser">&ndash;</p><p class="w-s" data-k="os">&ndash;</p><p class="w-s" data-k="input">&ndash;</p></div></div>
+          </section>
+
+          <section class="w s2 w-screen" aria-label="Screen and viewport">
+            <p class="w-k">Screen and viewport</p>
+            <div class="scr"><svg class="scr-viz" viewBox="0 0 160 100" aria-hidden="true"><rect class="scr-s"/><rect class="scr-v"/></svg>
+              <dl class="kv"><div><dt>Screen</dt><dd data-k="screen">&ndash;</dd></div><div><dt>Viewport</dt><dd data-k="viewport">&ndash;</dd></div><div><dt>Pixel ratio</dt><dd data-k="dpr">&ndash;</dd></div></dl></div>
+            <svg class="w-gear" viewBox="0 0 60 60" aria-hidden="true"><g data-gear="10" data-cx="30" data-cy="30" data-r="22"></g></svg>
+          </section>
+
+          <section class="w s2 w-tz" aria-label="Time zone">
+            <p class="w-k">Time zone and local time</p>
+            <div class="w-row"><p class="w-v" data-k="localtime">&ndash;</p><p class="w-s" data-k="tz">&ndash;</p></div>
+            <svg class="w-viz tzline" viewBox="0 0 280 40" aria-hidden="true"><g class="tz-dots"></g><g class="tz-mark"><line y1="4" y2="26"/><circle cy="15" r="5"/></g><text class="g-lbl" x="6" y="38">UTC&minus;12</text><text class="g-lbl" x="140" y="38" text-anchor="middle">UTC</text><text class="g-lbl" x="274" y="38" text-anchor="end">UTC+14</text></svg>
+          </section>
+
+          <section class="w s2 w-prefs" aria-label="Preferences">
+            <p class="w-k">Preferences</p>
+            <ul class="badges">
+              <li><span>Color scheme</span><b data-k="scheme">&ndash;</b></li>
+              <li><span>Motion</span><b data-k="motion">&ndash;</b></li>
+              <li><span>Language</span><b data-k="lang">&ndash;</b></li>
+              <li><span>Contrast</span><b data-k="contrast">&ndash;</b></li>
+            </ul>
+          </section>
+
+          <section class="w s3 w-privacy" aria-label="Privacy signals">
+            <p class="w-k">Privacy signals</p>
+            <ul class="lights">
+              <li><i data-l="dnt"></i><span>Do Not Track</span><b data-k="dnt">&ndash;</b></li>
+              <li><i data-l="gpc"></i><span>Global Privacy Control</span><b data-k="gpc">&ndash;</b></li>
+              <li><i data-l="cookies"></i><span>Cookies</span><b data-k="cookies">&ndash;</b></li>
+              <li><i data-l="ref"></i><span>Came from</span><b data-k="ref">&ndash;</b></li>
+            </ul>
+          </section>
+
+          <section class="w s3 w-ip vt-ip" aria-label="Your IP address">
+            <p class="w-k">Your IP address</p>
+            <p>Every server you connect to sees your IP address. This page doesn't collect it. If you're curious, the button asks a public echo service (ipify) what it sees, only when you press it.</p>
+            <div class="vt-ipact"><button type="button" class="btn-ghost vt-ipbtn">Show my IP</button><p class="vt-ipout" aria-live="polite"></p></div>
+            <svg class="w-gear" viewBox="0 0 60 60" aria-hidden="true"><g data-gear="18" data-cx="30" data-cy="30" data-r="22"></g></svg>
+          </section>
+        </div>
+
+        <noscript><p>This panel is computed with JavaScript in your browser, so with scripts off it shows nothing at all.</p></noscript>
+      </div>
+    </aside>
+
+    <footer>
+      <span>Arjun Bhadra, San Francisco Bay Area</span>
+      <span><button type="button" class="egg-link" data-vopen>What can this page see?</button></span>
+    </footer>
+  </div>
+</main>
+<!-- Project modal: filled from assets/projects.js -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <div class="modal-top glass"><span class="mt-name" id="mtName" aria-hidden="true"></span><button type="button" class="modal-close" data-close aria-label="Close project"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/site.js" defer></script>
+<script src="assets/viz.js" defer></script>
+<script src="assets/demos.js" defer></script>
+<script src="assets/graph.js" defer></script>
+<script src="assets/visit.js" defer></script>
+<script src="assets/links.js" defer></script>
+<script src="assets/projects.js" defer></script>
+<script src="assets/modal.js" defer></script>
+<script src="assets/cards.js" defer></script>
+<!-- GoatCounter: cookieless, privacy-friendly page-view counter (goatcounter.com). Site code: arjunbhadra -->
+<script data-goatcounter="https://arjunbhadra.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
 </html>

@@ -1,0 +1,251 @@
+# Arjun Bhadra
+
+> Software engineer building applied AI systems: LLM pipelines, agentic apps and the developer tools around them. Senior Software Engineer, AI/ML Applications at Adobe (GenStudio). Before that, eight years building Adobe's mobile and TV SDKs (Android, iOS, JavaScript, Roku, Amazon Vega OS). San Francisco Bay Area.
+
+This file is a plain-text summary of https://arjunbhadra.com for AI agents and crawlers. The site itself renders its project details with JavaScript.
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/arjunbhadra/
+- GitHub: https://github.com/addb
+
+## Focus
+Applied AI, LLM systems, agentic workflows (tool calling, multi-model orchestration), developer tooling with coding agents, and cross-platform SDKs.
+
+## About
+A builder at heart who loves to experiment. With AI in the toolbox, building things has never been easier; the part that still keeps him hooked is turning experiments into something people can rely on. Away from the keyboard: model cars, photography and chess.
+
+## Current systems
+The site's demos are illustrations of these systems, not live production data.
+
+### The GenAI service behind Adobe GenStudio (2025–now)
+An enterprise pipeline that turns campaign inputs into on-brand ad copy and assets for big brands.
+- Role: Senior Software Engineer, AI/ML Applications
+- Where: Adobe
+- Since: 2025
+- Stack: Python, async services
+- Context first, then generate: Brand, product and audience context is gathered before any copy is written, so every variant starts from the brand rather than a blank prompt.
+- Brand-safety checks: Every output is post-processed for brand safety before it reaches a campaign.
+- Routing across providers: Requests are routed across model providers, including Azure OpenAI.
+- Bring your own model: Integrations that let enterprises run generation on their own hosted models, designed directly with customer engineering teams.
+- Shared, pluggable pipelines: The service was reshaped into shared pipelines, so new channels and models plug in with little code and no repeated boilerplate.
+- Page: https://arjunbhadra.com/#genstudio-service
+
+### Layers
+An AI agent composes a scene layer by layer, or splits a flat image into editable layers; either way you can export it back to an image or turn it into a video.
+- Built: End to end
+- Status: Deployed
+- Agent: Claude tool calling
+- Quality: Regression eval harness
+- The agent loop: A custom Claude tool-calling agent decides which tool to call next, from segmentation to image models to compositing.
+- Segmentation and image models: SAM2 finds the pieces; Gemini image models handle the pixels.
+- Video from elements: Veo turns a composition’s elements into video.
+- Regression evals: A regression eval harness keeps the image pipeline honest as prompts and models change.
+- End to end: Built and deployed by Arjun, from the agent loop to production.
+- Page: https://arjunbhadra.com/#layers
+
+### OmniGen (2025)
+An agentic ad-generation prototype: an agent plans the ad, then produces a set of variants, each with its own copy, image and video.
+- Event: Adobe hackathon
+- Year: 2025
+- Type: Agentic prototype
+- Output: Copy, image, video
+- Plan first: A planning agent reads the brief and decides the audience and message before anything is generated.
+- One brief, three outputs: Copy, a hero image and a short video come from the same plan.
+- Page: https://arjunbhadra.com/#omnigen
+
+### Coding-agent skills
+Repository-aware Claude Code skills and a shared wiki for debugging, code review and onboarding, now part of the daily routine on two teams.
+- Built on: Claude Code custom skills
+- Adopted by: Two teams
+- Used for: Debugging, review, onboarding
+- Debugging: Skills that know the repository and how it fails.
+- Code review: A consistent first pass before a human looks.
+- Onboarding: Shared wiki knowledge new engineers can ask.
+- Two teams: Adopted by engineers on Arjun’s team and on an adjacent model-gateway team.
+- Page: https://arjunbhadra.com/#coding-agent-skills
+
+### Adobe’s mobile and TV SDKs (2017–2025)
+The plugin-based Mobile SDK for iOS and Android, and data-collection SDKs for Roku and Amazon Vega OS (Fire TV). Code that runs on millions of devices.
+- Years: 2017 to 2025
+- Role: Software Engineer, Mobile
+- Platforms: iOS, Android, Roku, Vega OS
+- Status: Open source
+- Two new TV platforms: Built Adobe’s data-collection SDKs for Roku and Amazon Vega OS (Fire TV), from architecture through release.
+- iOS and Android: Shipped the plugin-based Mobile SDK for data collection and media analytics on both platforms.
+- Validation tooling: Test automation, validator apps and cross-version compatibility suites.
+- Open source: Contributed to the open-source Mobile SDK.
+- Mentoring: Mentored a junior engineer on SDK architecture and design decisions.
+- Page: https://arjunbhadra.com/#mobile-sdk
+
+### Voyager
+An internal workbench of AI tools and utilities: API and load testing for the GenStudio generation service, plus LLM tools like an LLM council and side-by-side model comparison. Every tool keeps a run history and exports reports.
+- Type: Internal workbench
+- Testing: API and load tests for the GenStudio service
+- LLM tools: LLM council, model comparison
+- Every run: History and exportable reports
+- API testing: Exercise the GenStudio generation service's APIs from one place.
+- Load testing: Put the same APIs under concurrent load and watch how they hold up.
+- LLM council: Bring several models to the same question and weigh their answers together.
+- Model comparison: Run one prompt across models side by side.
+- History and reports: Each tool and utility keeps its run history, and any run can be exported as a report.
+- Page: https://arjunbhadra.com/#voyager
+
+## Earlier projects
+
+### San José MOTI website (2018)
+Pro bono work: volunteered as a software engineer and helped develop the website for the San José Mayor’s Office of Technology & Innovation.
+- Role: Volunteer software engineer
+- Since: November 2018
+- Type: Pro bono
+- Credit: Named on the team page
+- Credited by name: The office’s team page thanks Arjun by name.
+- Links: [View archived site (2019)](https://web.archive.org/web/20191101000538/https://moti.sanjosemayor.org/), [See the credit (archived)](https://web.archive.org/web/20191101000536/https://moti.sanjosemayor.org/shireen-santosham-moti-team/)
+- Page: https://arjunbhadra.com/#sj-moti
+
+### SnappLock (2014)
+“An App Locker, With a Difference. When you can protect your data, you are safe. But when you get to catch the thief, it’s fun!”
+- Platform: Android
+- Downloads: 5K+ on Google Play
+- Paper: IJCA 104(16)
+- Status: Free, later open source
+- Intruder ID: A wrong passcode captures a front-camera image of whoever tried.
+- Three strikes: After three wrong passcodes, a text goes to a number you choose and an alert tone plays.
+- Relock policy: Unlock all apps for a set period, then relock.
+- Auto-start: Protection comes back on by itself after a reboot.
+- The paper: Co-authored the related paper in IJCA 104(16).
+- Links: [Source on GitHub](https://github.com/addb/SnappLock-An-Android-Application-Locker)
+- Page: https://arjunbhadra.com/#snapplock
+
+### ABC3D (2015)
+An AR literacy game in two modes: scan a letter and a 3D object pops up, then drive a toy car around a little world collecting things that start with that letter.
+- Built with: Unity, Vuforia
+- Year: 2015
+- Paper: IEEE PerCom Workshops 2016
+- Role: Co-developed
+- Mode 1: scan a letter: The camera recognizes an alphabet marker and shows a 3D object for it: A for apple.
+- Mode 2: drive and collect: Children collect a set number of objects that start with the letter, in a bounded little world. Things that start with other letters don’t count.
+- The paper: Co-authored the IEEE PerCom Workshops 2016 paper.
+- Co-developed: A team project built with Unity and Vuforia.
+- Links: [Read the paper (PDF)](https://ics.uci.edu/~kobsa/papers/2016-PerCom-ABC3D-Kobsa.pdf)
+- Page: https://arjunbhadra.com/#abc3d
+
+### Pipeline monitoring dashboard (2016)
+A Python/Flask and Java monitoring dashboard for enterprise data pipelines, with failure diagnostics and alerts.
+- Role: Senior Intern, Enterprise Technology
+- Where: Canon Information & Imaging Solutions
+- Year: 2016
+- Code: Internal, not public
+- Failure diagnostics: Find the failing pipeline component and why.
+- Alerts: Failures raise an alert.
+- Page: https://arjunbhadra.com/#canon-dashboard
+
+### Places (2016)
+A location-aware Android social app: a photo and event feed with Krumbs capture, Eventshop data and Foursquare nearby places.
+- Platform: Android
+- Year: 2016
+- Krumbs capture: Photos captured with Krumbs.
+- Eventshop events: Event data from Eventshop.
+- Nearby places: Foursquare places around you.
+- Links: [Source on GitHub](https://github.com/addb/Places-Social-Media-Android-App)
+- Page: https://arjunbhadra.com/#places
+
+### Search Engine (2016)
+University-domain crawling, indexing and PageRank-style ranking in Java and MySQL.
+- Year: 2016
+- Stack: Java, MySQL
+- Type: Team project
+- Crawl: Follow links across a university domain.
+- Index: Store pages in MySQL for lookup.
+- Rank: Order results with a PageRank-style score.
+- Links: [Source on GitHub](https://github.com/addb/Search-Engine)
+- Page: https://arjunbhadra.com/#search-engine
+
+### Intelligent Business Analytics (2015)
+A gadget portal with descriptions, specs, best-buy prices and comparisons, plus a Twitter trend view that classifies tweets with a Naive Bayes classifier.
+- Year: 2015
+- Type: B.E. final-year project
+- Where: VESIT, University of Mumbai
+- Model: Naive Bayes
+- The portal: Gadget descriptions, specs, best-buy prices and comparisons in one place.
+- Naive Bayes on tweets: Tweets with a gadget’s hashtag are classified as positive, negative or neutral.
+- Final-year project: B.E. in Information Technology, VESIT, University of Mumbai.
+- Page: https://arjunbhadra.com/#intelligent-business-analytics
+
+### The D-Deal (2015)
+A website for a fully automated, real-time online auctioning and trading event, built for 300 simultaneous users.
+- Year: 2015
+- Built for: 300 simultaneous users
+- Real time: Bids and trades update live for everyone.
+- Fully automated: Auctions and trades settle on their own.
+- Page: https://arjunbhadra.com/#d-deal
+
+### Health Care Management Institution Portal (2015)
+Patients see their appointments, treatment history and bills; doctors manage appointments and schedules.
+- Year: 2015
+- Type: Course project
+- For patients: Appointments, treatment history and bills.
+- For doctors: Manage appointments and schedules.
+- Links: [Source on GitHub](https://github.com/addb/Ehealth)
+- Page: https://arjunbhadra.com/#ehealth
+
+### GameMaker game (2015)
+An action game built in GameMaker Studio 8.1 with Google SketchUp assets: pick a character and fight enemies.
+- Year: 2015
+- Engine: GameMaker Studio 8.1
+- Assets: Google SketchUp
+- Pick a character: Choose who to play.
+- Fight enemies: Take them on as you go.
+- Built with: GameMaker Studio 8.1, with assets from Google SketchUp.
+- Page: https://arjunbhadra.com/#gamemaker-game
+
+### Run & Urn (2014)
+A web app for the NGO Magic Bus to create running-event campaigns that raise money, with the public taking part and corporate sponsors funding campaigns.
+- Event: Code for Good hackathon
+- Year: 2014
+- For: Magic Bus
+- Campaigns: The NGO creates running-event campaigns.
+- The public joins: Runners sign up to take part.
+- Sponsors fund: Corporate sponsors fund campaigns.
+- Page: https://arjunbhadra.com/#run-and-urn
+
+### Online Inventory Management (2014)
+Buy, sell, edit and view stock in the browser.
+- Year: 2014
+- Stack: HTML, CSS, JavaScript, PHP, AJAX
+- Buy and sell: Stock updates with every sale and purchase.
+- Edit and view: Keep the catalog current.
+- Page: https://arjunbhadra.com/#inventory-management
+
+### Online Project Management (2014)
+Students upload their projects; professors review and grade them.
+- Year: 2014
+- Type: Course project
+- Upload: Students submit projects.
+- Review: Professors leave feedback.
+- Grade: Grades go back to students.
+- Page: https://arjunbhadra.com/#project-management
+
+### ISTE VESIT website and app (2013–14)
+The website and Android app for the ISTE VESIT student chapter. Arjun also volunteered as the chapter’s coordinator in 2012–13.
+- Years: 2013–14
+- Platforms: Web, Android
+- Volunteering: Coordinator, 2012–13
+- Website: The chapter’s home on the web.
+- Android app: Events and news in your pocket.
+- Page: https://arjunbhadra.com/#iste-vesit
+
+### Cricket league database (2013)
+A small database application with an MS-SQL database and a VB.NET interface.
+- Year: 2013
+- Stack: MS-SQL, VB.NET
+- MS-SQL database: Teams and players in tables.
+- VB.NET interface: Run queries from a desktop app.
+- Page: https://arjunbhadra.com/#cricket-league-db
+
+### NodeJS ChatApp
+Multi-room browser chat on Node.js.
+- Stack: Node.js, JavaScript
+- Rooms: Separate conversations, side by side.
+- Real time: Messages appear without a refresh.
+- Links: [Source on GitHub](https://github.com/addb/NodeJS_ChatApp)
+- Page: https://arjunbhadra.com/#chat-app
