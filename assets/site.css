@@ -63,8 +63,13 @@
   .brand { display: flex; align-items: center; gap: .7rem; color: var(--text); background: none; font-family: var(--display); font-weight: 500; font-variation-settings: "wdth" 110; letter-spacing: .02em; }
   .brand svg { width: 26px; height: 26px; }
   .hud nav ul { display: flex; gap: clamp(.9rem, 2.2vw, 2rem); list-style: none; margin: 0; padding: 0; }
-  .hud nav a { color: var(--muted); background-size: 0 1px; font-size: .95rem; }
-  .hud nav a:hover, .hud nav a[aria-current="true"] { color: var(--text); background-size: 100% 1px; }
+  .hud nav a { position: relative; color: var(--muted); background: none; font-size: .95rem; padding-left: 13px; transition: color .25s; }
+  .hud nav a::before { content: ""; position: absolute; left: 0; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: var(--warm); opacity: 0; transform: scale(.4); transition: opacity .25s, transform .25s; }
+  .hud nav a:hover { color: var(--text); }
+  .hud nav a:hover::before { opacity: .35; transform: scale(.8); }
+  .hud nav a[aria-current="true"] { color: #fff; }
+  .hud nav a[aria-current="true"]::before { opacity: 1; transform: none; box-shadow: 0 0 8px var(--warm); }
+  @media (prefers-reduced-motion: reduce) { .hud nav a::before { transition: none; } }
   .clock { font-family: var(--display); font-variation-settings: "wdth" 100; font-variant-numeric: tabular-nums; font-size: .9rem; color: var(--muted); display: flex; align-items: center; gap: .55rem; white-space: nowrap; }
   .clock i { width: 7px; height: 7px; border-radius: 50%; background: var(--ice); box-shadow: 0 0 10px var(--ice); }
   .progress { position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; transform-origin: 0 50%; transform: scaleX(var(--p, 0)); background: linear-gradient(90deg, var(--ice-2), var(--ice)); }
